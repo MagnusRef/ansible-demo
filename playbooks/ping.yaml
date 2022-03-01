@@ -1,0 +1,6 @@
+---
+- name: ping servers
+  hosts: "{{ host }}"
+  tasks:
+    - name: ping all servers
+      ping:

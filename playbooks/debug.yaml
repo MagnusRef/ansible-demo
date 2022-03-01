@@ -1,0 +1,13 @@
+- name: debugging
+  hosts: "{{ host }}"
+  tasks:
+    - name: debug hosts
+      debug:
+        msg:
+          - "FQDN: {{ansible_fqdn}}"
+          - "IP: {{ansible_host}}"
+          - "HOST: {{ansible_hostname}}"
+          - "DEFINT: {{ansible_default_ipv4.interface}}"
+          - "DNS: {{ansible_dns}}"
+          - "DISTRO: {{ansible_distribution}}"
+          - "VERSION: {{ansible_distribution_version}}"

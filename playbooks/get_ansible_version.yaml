@@ -1,0 +1,6 @@
+- name: get EE ansible version
+  hosts: localhost
+  tasks:
+    - name: debug hosts
+      debug:
+        msg: "{{ansible_version}}"

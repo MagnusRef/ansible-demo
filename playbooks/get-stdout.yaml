@@ -1,0 +1,15 @@
+---
+- name: return stdout of {{ cmd }}
+  gather_facts: yes
+  hosts: "{{ host }}"
+  tasks:
+    - name: register stdout 
+      command: "{{ cmd }}"
+      register: cmd_output
+
+    - name: list cmd output
+      debug:
+        msg: 
+          - "Hostname: {{ ansible_fqdn }}"
+          - "IP: {{ ansible_default_ipv4.address }}"
+          - "Output: {{ cmd_output.stdout }}"

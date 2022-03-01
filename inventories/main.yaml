@@ -1,0 +1,10 @@
+all:
+  children:
+    on_prem:
+      hosts:
+        ansi-dev01.local:
+        ansi-dev02.local:
+    ungrouped:
+      hosts:
+        localhost:
+          ansible_connection: local
